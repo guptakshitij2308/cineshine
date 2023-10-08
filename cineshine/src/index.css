@@ -79,9 +79,14 @@ body {
 }
 
 .error {
-  text-align: center;
   font-size: 2rem;
-  padding: 4.8rem;
+  color: #e03131;
+  font-weight: 600;
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 /* ******* */
@@ -347,6 +352,13 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.loader-bar {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 /*

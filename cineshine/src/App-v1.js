@@ -1,68 +1,22 @@
-import { useEffect, useState } from "react";
-import Loader from "./Loader";
+import { useState } from "react";
+import { tempMovieData, tempWatchedData } from "./utils/tempdata";
 
 const average = (arr) =>
   arr.reduce((acc, cur, i, arr) => acc + cur / arr.length, 0);
-const Key = "722f29b8";
 
 export default function App() {
-  const [movies, setMovies] = useState([]);
-  const [watched, setWatched] = useState([]);
-  const [isLoading, setIsLoading] = useState(false);
-  const [error, setError] = useState("");
-  const [query, setQuery] = useState("");
-
-  useEffect(
-    function () {
-      async function getMovies() {
-        try {
-          setIsLoading(true);
-          setError("");
-          const res = await fetch(
-            `https://www.omdbapi.com/?apikey=${Key}&s=${query}`
-          );
-
-          if (!res.ok) throw new Error("Something went wrong");
-
-          const data = await res.json();
-
-          if (data.Response === "False") throw new Error("Movie not found");
-
-          setMovies(data.Search);
-        } catch (err) {
-          console.error(err.message);
-          setError(err.message);
-        } finally {
-          setIsLoading(false);
-        }
-      }
-
-      if (query.length < 3) {
-        setMovies([]);
-        setError("");
-        return;
-      }
-
-      getMovies();
-    },
-    [query]
-  );
+  const [movies, setMovies] = useState(tempMovieData);
+  const [watched, setWatched] = useState(tempWatchedData);
 
   return (
     <>
       <Navbar>
-        <Search query={query} setQuery={setQuery} />
+        <Search />
         <NumResults movies={movies} />
       </Navbar>
       <Main>
         <Box>
-          {isLoading ? (
-            <Loader />
-          ) : error ? (
-            <ErrorMessage message={error} />
-          ) : (
-            <MovieList movies={movies} />
-          )}
+          <MovieList movies={movies} />
         </Box>
         <Box>
           <WatchedSummary watched={watched} />
@@ -72,10 +26,6 @@ export default function App() {
       </Main>
     </>
   );
-}
-
-function ErrorMessage({ message }) {
-  return <div className="error">{message}...</div>;
 }
 
 function Navbar({ children }) {
@@ -105,7 +55,8 @@ function NumResults({ movies }) {
   );
 }
 
-function Search({ query, setQuery }) {
+function Search() {
+  const [query, setQuery] = useState("");
   return (
     <input
       className="search"
