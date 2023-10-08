@@ -117,15 +117,3 @@ function Star({ onRate, full, onHoverIn, onHoverOut, color, size }) {
 }
 
 export default StarRating;
-
-/*
-FULL STAR
-
-
-
-
-EMPTY STAR
-
-
-
-*/
