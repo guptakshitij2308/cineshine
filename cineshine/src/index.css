@@ -3,9 +3,9 @@
   --color-primary-light: #7950f2;
   --color-text: #4d4d4d;
   --color-text-dark: #3a3a3a;
-  --color-background-100: #e1e1e1;
-  --color-background-500: #dedede;
-  --color-background-900: #454545;
+  --color-background-100: #c7c7c7;
+  --color-background-500: #e3e3e3;
+  --color-background-900: #4c4c4c;
   --color-red: #fa5252;
   --color-red-dark: #e03131;
 }
@@ -341,7 +341,7 @@ body {
   aspect-ratio: 1;
   border-radius: 50%;
   border: none;
-  background-color: #fff;
+  background-color: var(--color-primary);
   color: var(--color-background-500);
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.8);
   font-family: sans-serif;
@@ -360,11 +360,3 @@ body {
   left: 50%;
   transform: translate(-50%, -50%);
 }
-
-/*
-SPACING SYSTEM (px)
-2 / 4 / 8 / 12 / 16 / 24 / 32 / 40 / 48 / 64 / 80 / 96 / 128
-
-FONT SIZE SYSTEM (px)
-10 / 12 / 14 / 16 / 18 / 20 / 24 / 30 / 36 / 44 /52 / 62 / 74 / 86 / 98
-*/
