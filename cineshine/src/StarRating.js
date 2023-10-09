@@ -17,7 +17,7 @@ StarRating.propTypes = {
   defaultRating: PropTypes.number,
   color: PropTypes.string,
   size: PropTypes.number,
-  messages: PropTypes.arrayOf,
+  messages: PropTypes.array,
   className: PropTypes.string,
   onSetRating: PropTypes.func,
 };
@@ -50,9 +50,9 @@ export default function StarRating({
     <div style={containerStyle} className={className}>
       <div style={starContainerStyle}>
         {Array.from({ length: maxRating }, (_, i) => (
-          <span>
+          <span key={i + 1}>
             <Star
-              key={i}
+              key={i + 1}
               onRate={() => handleRating(i + 1)}
               full={tempRating ? tempRating >= i + 1 : i + 1 <= rating}
               onHoverIn={() => setTempRating(i + 1)}

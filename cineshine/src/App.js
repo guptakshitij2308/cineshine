@@ -170,6 +170,18 @@ function MovieDetails({ selectedId, onCloseMovie, onAddWatched, watched }) {
     [selectedId]
   );
 
+  useEffect(
+    function () {
+      if (!title) return;
+      document.title = `Movie | ${title}`;
+
+      return function () {
+        document.title = "CineShine";
+      };
+    },
+    [title]
+  );
+
   return (
     <div className="details">
       {isLoading ? (
@@ -200,6 +212,7 @@ function MovieDetails({ selectedId, onCloseMovie, onAddWatched, watched }) {
                     maxRating={10}
                     size={24}
                     onSetRating={setUserRating}
+                    key={selectedId}
                   />
                   {userRating && (
                     <button className="btn-add" onClick={handleAdd}>
