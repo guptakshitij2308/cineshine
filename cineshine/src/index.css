@@ -3,8 +3,8 @@
   --color-primary-light: #7950f2;
   --color-text: #4d4d4d;
   --color-text-dark: #3a3a3a;
-  --color-background-100: #c7c7c7;
-  --color-background-500: #e3e3e3;
+  --color-background-100: #fefefe;
+  --color-background-500: #d0d0d0;
   --color-background-900: #4c4c4c;
   --color-red: #fa5252;
   --color-red-dark: #e03131;
@@ -213,7 +213,7 @@ body {
   border-radius: 50%;
   border: none;
   background-color: var(--color-red);
-  color: var(--color-background-900);
+  color: var(--color-background-100);
   font-size: 0.9rem;
   font-weight: bold;
   cursor: pointer;
@@ -309,7 +309,7 @@ body {
 
 .btn-add {
   background-color: var(--color-primary);
-  color: var(--color-text);
+  color: var(--color-background-100);
   border: none;
   border-radius: 10rem;
   font-size: 1.4rem;
@@ -341,8 +341,8 @@ body {
   aspect-ratio: 1;
   border-radius: 50%;
   border: none;
-  background-color: var(--color-primary);
-  color: var(--color-background-500);
+  background-color: var(--color-background-100);
+  color: var(--color-background-900);
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.8);
   font-family: sans-serif;
   font-size: 2.4rem;

@@ -22,7 +22,7 @@ StarRating.propTypes = {
   onSetRating: PropTypes.func,
 };
 
-const StarRating = ({
+export default function StarRating({
   maxRating = 5,
   color = "#fcc419",
   size = 48,
@@ -30,7 +30,7 @@ const StarRating = ({
   messages = [],
   defaultRating = 0,
   onSetRating,
-}) => {
+}) {
   const [rating, setRating] = useState(defaultRating);
   const [tempRating, setTempRating] = useState(0);
 
@@ -70,7 +70,7 @@ const StarRating = ({
       </p>
     </div>
   );
-};
+}
 
 function Star({ onRate, full, onHoverIn, onHoverOut, color, size }) {
   const starStyles = {
@@ -115,5 +115,3 @@ function Star({ onRate, full, onHoverIn, onHoverOut, color, size }) {
     </span>
   );
 }
-
-export default StarRating;
