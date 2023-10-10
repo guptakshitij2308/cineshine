@@ -50,15 +50,6 @@ export default function App() {
       </Navbar>
       <Main>
         <Box>
-          {isLoading ? (
-            <Loader />
-          ) : error ? (
-            <ErrorMessage message={error} />
-          ) : (
-            <MovieList onSelectMovie={handleSelectMovie} movies={movies} />
-          )}
-        </Box>
-        <Box>
           {selectedId ? (
             <MovieDetails
               selectedId={selectedId}
@@ -74,6 +65,15 @@ export default function App() {
                 onDeleteWatced={handleDeleteWatched}
               />
             </>
+          )}
+        </Box>
+        <Box>
+          {isLoading ? (
+            <Loader />
+          ) : error ? (
+            <ErrorMessage message={error} />
+          ) : (
+            <MovieList onSelectMovie={handleSelectMovie} movies={movies} />
           )}
         </Box>
       </Main>

@@ -378,7 +378,7 @@ body {
   }
 
   .box {
-    height: 80rem;
+    height: 85rem;
   }
 
   .search {
@@ -395,9 +395,9 @@ body {
 
 @media (max-width: 400px) {
   html {
-    font-size: 50%;
+    font-size: 48%;
   }
   .box {
-    width: 38rem;
+    height: 95rem;
   }
 }
